@@ -1,0 +1,31 @@
+package org.novaride.modelentity.models;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.awt.*;
+
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Car extends BaseModel{
+
+    @Column(unique=true,nullable=false)
+    private String numberPlate;
+
+    @ManyToOne
+    private Color color;
+
+    private String brand;
+
+    private String model;
+
+    @Enumerated(value = EnumType.STRING)
+    private CarType carType;
+
+    @OneToOne
+    private Driver driver;
+}

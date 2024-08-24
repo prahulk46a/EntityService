@@ -1,9 +1,6 @@
 package org.novaride.modelentity.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Repository;
 
@@ -34,15 +31,18 @@ public class Booking extends BaseModel{
     private Date endTime;
     private Long totalDistance;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger;    //here we have used 2 times many to one relationship.
                                     //Hence to avoid mapping confusion which many to one map with other
                                     //We use mapped by property in other entity
 
-
-
     @ManyToOne
     private Driver driver;
 
+    @OneToOne
+    private ExactLocation startLocation;
+
+    @OneToOne
+    private ExactLocation endLocation;
 
 }
