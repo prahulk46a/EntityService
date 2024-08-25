@@ -50,6 +50,9 @@ public class Driver extends BaseModel{
     @DecimalMax(value = "5.00", message = "Rating must be less than or equal to 5.00")
     private Double rating;
 
+    @Column(nullable = false)
+    private Boolean isAvailable;
+
 
 
 }

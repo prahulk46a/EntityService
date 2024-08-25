@@ -33,6 +33,22 @@ public class Passenger extends BaseModel {
 
     @OneToMany(mappedBy = "passenger")
     private List<Booking> bookings = new ArrayList<>();
+
+    @OneToOne
+    private Booking activeBooking;
+
+    @DecimalMin(value = "0.00", message = "Rating must be grater than or equal to 0.00")
+    @DecimalMax(value = "5.00", message = "Rating must be less than or equal to 5.00")
+    private Double rating;
+
+    @OneToOne
+    private ExactLocation lastKnownLocation;
+
+    @OneToOne
+    private ExactLocation home;
+
+
+
 }
 
 

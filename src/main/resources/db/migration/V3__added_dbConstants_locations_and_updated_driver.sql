@@ -92,8 +92,6 @@ ALTER TABLE nova_local_db.named_location
 
 
 
-
-
 #db level check for ratings should be in range 1 to 5
 ALTER table nova_local_db.driver
     ADD Constraint check_rating CHECK ( driver.rating>=0 AND driver.rating<=5);
