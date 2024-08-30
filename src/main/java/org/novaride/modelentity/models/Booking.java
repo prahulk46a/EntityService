@@ -26,9 +26,12 @@ public class Booking extends BaseModel{
     @Enumerated(EnumType.STRING) //This annotation is used to specify that enum is mapped in entity.enum type will decide how enum to store in db bydefault enumtype is num i.e will store according to mapping
     //The most common option to map an enum value to and from its database representation in JPA before 2.1 is to use the @Enumerated annotation.
     private BookingStatus bookingStatus;
-
+    @Temporal(value = TemporalType.TIMESTAMP)
     private Date startTime;
+
+    @Temporal(value = TemporalType.TIMESTAMP)
     private Date endTime;
+
     private Long totalDistance;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,13 +39,13 @@ public class Booking extends BaseModel{
                                     //Hence to avoid mapping confusion which many to one map with other
                                     //We use mapped by property in other entity
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExactLocation startLocation;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExactLocation endLocation;
 
 }

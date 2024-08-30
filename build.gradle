@@ -8,7 +8,7 @@ plugins {
 
 //this version is needed to update every time when we change in the model entity service
 group = 'org.NovaRide'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.8-SNAPSHOT'
 
 java {
 	toolchain {

@@ -4,7 +4,7 @@ public enum BookingStatus {
     SCHEDULED,
     CANCELLED,
     ARRIVED,
-    ASSIGNED,
+    ASSIGNING_DRIVER,
     IN_RIDE,
     COMPLETED,
 }
