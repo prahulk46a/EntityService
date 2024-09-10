@@ -1,5 +1,6 @@
 package org.novaride.modelentity.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
@@ -15,7 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler" , "bookings"})//Used to ignore recurring json property store
 public class Driver extends BaseModel{
     private String Name;
 
