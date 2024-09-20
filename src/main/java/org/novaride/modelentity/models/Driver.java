@@ -16,7 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler" , "bookings"})//Used to ignore recurring json property store
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler" , "bookings"})//Used to ignore recurring json element property store
 public class Driver extends BaseModel{
     private String Name;
 
